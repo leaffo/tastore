@@ -1,0 +1,2 @@
+<input type="text" id="ngaydi" name="ngaydi" />
+<input type="text" id="ngayve" name="ngayve" />

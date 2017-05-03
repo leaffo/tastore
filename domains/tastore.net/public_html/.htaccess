@@ -1,0 +1,37 @@
+RewriteEngine on
+
+DirectoryIndex home.htm index.php
+
+Options -Indexes
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([a-zA-Z0-9_-]+)/keyword=(.*)&p=([0-9]+)$ index.php?com=$1&keyword=$2&p=$3  [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/keyword=(.*)$ index.php?com=$1&keyword=$2  
+
+RewriteRule ^([a-zA-Z0-9_-]+).html&p=([0-9]+)$ index.php?com=$1&p=$2  [L]
+RewriteRule ^([a-zA-Z0-9_-]+).html&curPage=([0-9]+)$ index.php?com=$1&curPage=$2  [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+).html$ index.php?com=$1  [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+).html$ index.php?com=$1&id=$3  [L]
+
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+).html&p=([0-9]+)$ index.php?com=$1&idc=$2&p=$3 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+).html$ index.php?com=$1&idc=$2 [L]
+
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+).html&p=([0-9]+)$ index.php?com=$1&idi=$4&p=$5 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+).html$ index.php?com=$1&idi=$4 [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+).html&p=([0-9]+)$ index.php?com=$1&idi1=$5&p=$6 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+).html$ index.php?com=$1&idi1=$5 [L]
+
+
+
+
+
+
+
+

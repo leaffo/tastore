@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="js/themes/base/jquery.ui.all.css" />
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/ui/jquery.ui.core.js"></script>
+<script src="js/ui/jquery.ui.widget.js"></script>
+<script src="js/ui/jquery.ui.datepicker.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$( "#ngaydi" ).datepicker({
+			defaultDate: "+1w",
+			changeMonth: true,
+			numberOfMonths: 3,
+			dateFormat: "dd/mm/yy",
+			dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+			onSelect: function( selectedDate ) {				
+			}
+		});
+		$( "#ngayve" ).datepicker({
+			defaultDate: "+1w",
+			changeMonth: true,
+			numberOfMonths: 3,
+			dateFormat: "dd/mm/yy",
+			dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+			onSelect: function( selectedDate ) {				
+			}
+		});
+	});
+</script>
