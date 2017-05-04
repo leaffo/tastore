@@ -23,9 +23,7 @@ session_start();
 	$sql_sp = "select id,ten,tenkhongdau,photo,giakhuyenmai,gia,luotmua from #_tour  where hienthi=1   order by id  desc limit $sl";
 	$d->query($sql_sp);
 	$result_product= $d->result_array();
-	
-	
-	
+
 	?>
     <div class="product_hot">
             <?

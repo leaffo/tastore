@@ -36,9 +36,15 @@ if(isset($_GET['id'])){
 	
 
 	$title_bar='Hỏi đáp - ';
-	$title_tcat=$loaitin[0]['ten'];
-	
-	$sql_tintuc = "select ten,ngaytao,noidung,thumb,tenkhongdau,mota,photo,id from #_hoidap where hienthi=1 and id_item='".$loaitin[0]['id']."'  order by id desc";
+	if(isset($loaitin)){
+    $title_tcat=$loaitin[0]['ten'];
+        $sql_tintuc = "select ten,ngaytao,noidung,thumb,tenkhongdau,mota,photo,id from #_hoidap where hienthi=1 and id_item='".$loaitin[0]['id']."'  order by id desc";
+
+    }
+    else{
+        $sql_tintuc = "select ten,ngaytao,noidung,thumb,tenkhongdau,mota,photo,id from #_hoidap where hienthi=1 and id_item='"."'  order by id desc";
+
+    }
 	$d->query($sql_tintuc);
 	$tintuc = $d->result_array();
 	$curPage = isset($_GET['p']) ? $_GET['p'] : 1;

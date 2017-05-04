@@ -1,4 +1,5 @@
 <?php
+
 //ob_start();
 session_start();
 	date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -20,11 +21,12 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="http://<?=$config_url?>"  />
+<base href="http://localhost:1412/public_html/"  />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
 <?=$title_bar?>
-<?=$row_title['ten']?>
+<?if(isset($row_title['ten']))
+echo $row_title['ten']?>
 </title>
 <link rel="shortcut icon" type="image/x-icon" href="/images/ficon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -97,10 +99,12 @@ $(document).ready(function() {
 
 </head>
 <body>
-<div class="container "><div class="blokc-menu-m">
- 
-    <? include _template."layout/header.php"?>
-  <div id="session">
+<div class="container-fluid "><div class="blokc-menu-m">
+
+   <?include _template."layout/header.php"?>
+
+
+<div id="session">
   			<? // san pham
 			 if($com=='san-pham'&&$_GET['id']!=''){ ?>
 				 

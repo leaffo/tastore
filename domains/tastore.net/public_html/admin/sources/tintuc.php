@@ -1,4 +1,6 @@
-<?php	if(!defined('_source')) die("Error");
+<?php
+
+if(!defined('_source')) die("Error");
 $act = (isset($_REQUEST['act'])) ? addslashes($_REQUEST['act']) : "";
 switch($act){
 	case "man":
@@ -38,17 +40,19 @@ switch($act){
 		break;
 	default:
 		$template = "index";
-
-	default:
-		$template = "index";
 }
+
 
 function fns_Rand_digit($min,$max,$num)
 	{
-		$result='';
-		for($i=0;$i<$num;$i++){
+
+
+        $result='';
+
+            for($i=0;$i<$num;$i++){
 			$result.=rand($min,$max);
 		}
+
 		return $result;	
 	}
 

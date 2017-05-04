@@ -40,10 +40,14 @@ if(isset($_GET['id'])){
 	$d->query($sql);
 	$loaitin=$d->result_array();
 	$title_bar='Blog - ';
-	$title_tcat=$loaitin[0]['ten'];
-	
-	$sql_tintuc = "select ten,ngaytao,noidung,thumb,tenkhongdau,mota,photo,id from #_news where hienthi=1 and id_item='".$loaitin[0]['id']."'  order by id desc ";
-	$d->query($sql_tintuc);
+	if(isset($loaitin[0]['ten'])) {
+        $title_tcat = $loaitin[0]['ten'];
+
+        $sql_tintuc = "select ten,ngaytao,noidung,thumb,tenkhongdau,mota,photo,id from #_news where hienthi=1 and id_item='" . $loaitin[0]['id'] . "'  order by id desc ";
+    }ELSE {
+        $sql_tintuc = "select ten,ngaytao,noidung,thumb,tenkhongdau,mota,photo,id from #_news where hienthi=1 and id_item='"  . "'  order by id desc ";
+    }
+        $d->query($sql_tintuc);
 	$tintuc = $d->result_array();
 	$curPage = isset($_GET['p']) ? $_GET['p'] : 1;
 	$url=getCurrentPageURL();

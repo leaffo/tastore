@@ -122,6 +122,7 @@
 	$description = $company['description'];
 	$keywords = $company['keywords'];
 	
-	if($source!="") include _source.$source.".php";			
-				
+	if(isset($source)) {
+        if ($source != "") include _source . $source . ".php";
+    }
 ?>

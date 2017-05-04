@@ -8,7 +8,6 @@ $sql="select id,tenkhongdau,ten,photo from #_products_cat where hienthi=1 order 
 $d->query($sql);
 $result_product_cat=$d->result_array();
 
-
 $d->reset();
 	$sql = "select id,ten,tenkhongdau,thumb,photo,gia,giakhuyenmai,donvi,hot from #_products where hienthi=1 and banchay >0 order by id desc";
 	$d->query($sql);
@@ -18,7 +17,6 @@ $d->reset();
 	$sql = "select id,ten,tenkhongdau,thumb,photo,mota from #_news where hienthi=1 and tinnoibat >0 order by id desc limit 0,5";
 	$d->query($sql);
 	$result_blog_hot= $d->result_array();
-
 
 $d->reset();
 	$sql_slider = "select ten,photo,id_photo from #_hinhanh where hienthi=1 and id_photo='QC-3' order by stt,id desc ";
